@@ -221,6 +221,7 @@ function create_config( )
     "all",
     "leave_ban",
     "plugins",
+    "realm",
     },
     sudo_users = {164059631,tonumber(164059631)},--Sudo users
     disabled_channels = {},
