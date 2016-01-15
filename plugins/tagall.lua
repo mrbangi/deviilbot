@@ -1,12 +1,13 @@
+
 --Tag ppl with username and a msg after it
+
 local function tagall(cb_extra, success, result)
     local receiver = cb_extra.receiver
     local chat_id = "chat#id"..result.id
     local text = ''
-    local i = 0 + 1
     for k,v in pairs(result.members) do
         if v.username then
-			text = text..i.."- @"..v.username.."\n"
+			text = text.."@"..v.username.."\n"
 		end
     end
 	text = text.."\n"..cb_extra.msg_text
@@ -30,7 +31,8 @@ return {
     "/tagall [msg]."
   },
   patterns = {
-    "^[!/]tagall +(.+)$"
+    "^[!/@#$&]tagall +(.+)$",
+    "^([Tt]agall) +(.+)$"
   },
   run = run
 }
